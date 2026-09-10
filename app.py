@@ -36,7 +36,7 @@ def chat(user_message, history, retries=0):
 
     # Initial LLM call
     response = openai.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model="openai/gpt-oss-120b",
         messages=messages,
         tools=tools
     )
@@ -52,7 +52,7 @@ def chat(user_message, history, retries=0):
         messages.extend(results)
 
         response = openai.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="openai/gpt-oss-120b",
             messages=messages,
             tools=tools
         )
